@@ -5,7 +5,7 @@
 
 There are multiple reasons that led me to start this project. First of all, it is a great project to learn various technologies and tools.
 
-Since I created this small server, I learned about containerisation with Docker and its limitations, got way better at networking through setting up and trying to understand how Pi-hole works (How does a DNS server work? What are DoT, DoH and DNSSEC?), discovered the world of meta-search engines and metrics scraping, but also how to monitor my server and the services running. While installing Jellyfin, I looked for the best compromise between quality/size/accessibility, I dipped my toes in the world of audio and video codecs, learned the difference between a codec and a container, and between transcoding and remuxing. I now also better understand the difference between x86 and ARM architectures. In summary, I learned a lot, which is a good thing both both personally and professionally.
+Since I created this small server, I learned about containerisation with Docker and its limitations, got way better at networking through setting up and trying to understand how Pi-hole works (How does a DNS server work? What are DoT, DoH and DNSSEC?), discovered the world of meta-search engines and metrics scraping, but also how to monitor my server and the services running. While installing Jellyfin, I looked for the best compromise between quality/size/accessibility, I dipped my toes in the world of audio and video codecs, learned the difference between a codec and a container, and between transcoding and remuxing. I now also better understand the difference between x86 and ARM architectures. In summary, I learned a lot, which is a good thing both personally and professionally.
 
 Another reason is privacy. Indeed, the first services I self-hosted and that led me down this rabbit hole were SearXNG and Pi-hole, one to replace Google Search, the second to block ads and telemetry network-wide. Sure, I could have just used Startpage, Brave Search, DuckDuckGo, and NextDNS. But the way I see it, if you have the opportunity to enhance your internet usage and learn things you care about at the same time, there's no reason not to take that opportunity!
 
@@ -34,7 +34,7 @@ You can't have a media server and not have a place to store all those movies and
 		- Container management
 		- Monitoring
 		- Dashboard
-		- CalDav and CardDav
+		- CalDAV and CardDAV
   
 ### Hosted services
     - cAdvisor
@@ -68,7 +68,7 @@ The Twingate Connector does not make the exposed services accessible from the we
 
 Twingate needs the homelab to run its connector. This connector keeps a connection with their servers. This way, when a client tries to connect, the Twingate server can have the client and homelab connect directly via peer-to-peer. Twingate itself is unable to see any traffic occurring between the homelab and the clients.
 
-This method is used for services containing "sensitive" information or tools that allow you to control the homelab. For example, services like Portainer and Grafana use this method. Connecting to the homelab via ssh when outside the LAN also requires a Twingate connection.
+This method is used for services containing "sensitive" information or tools that allow you to control the homelab. For example, services like Portainer and Grafana use this method. Connecting to the homelab via SSH when outside the LAN also requires a Twingate connection.
 
 #### Need an upgrade ?
 
