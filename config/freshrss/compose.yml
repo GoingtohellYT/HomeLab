@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+    freshrss:
+        container_name: freshrss
+        image: freshrss/freshrss
+        environment:
+            - PUID=1000
+            - PGID=100
+            - TZ=Europe/Paris
+        ports:
+            - '3002:80'
+        volumes:
+            - '/path/to/freshrss/data:/var/www/FreshRSS/data'
+            - '/path/to/freshrss/extensions:/var/www/FreshRSS/extensions'
+        restart: unless-stopped
