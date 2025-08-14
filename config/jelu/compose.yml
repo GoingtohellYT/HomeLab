@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  jelu:
+    image: wabayang/jelu:latest
+    container_name: jelu
+    volumes:
+      - /path/to/jelu/config:/config
+      - /path/to/jelu/database:/database
+      - /path/to/jelu/files/images:/files/images
+      - /path/to/jelu/files/imports:/files/imports
+      - /etc/timezone:/etc/timezone:ro
+    ports:
+      - 11111:11111
+    restart: unless-stopped
