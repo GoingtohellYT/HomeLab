@@ -1,0 +1,27 @@
+version: "3"
+services:
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      WATCHTOWER_NOTIFICATION_REPORT: "true"
+      WATCHTOWER_NOTIFICATION_URL: > <your URL>
+      WATCHTOWER_NOTIFICATION_TEMPLATE: |
+        {{- if .Report -}}
+          {{- with .Report -}}
+            {{- if (or .Updated .Failed) -}}
+              {{len .Scanned}} Scanned, {{len .Updated}} Updated, {{len .Failed}} Failed
+              {{- range .Updated}}
+                - {{.Name}} ({{.ImageName}}): {{.CurrentImageID.ShortID}} updated to {{.LatestImageID.ShortID}}
+              {{- end -}}
+              {{- range .Failed}}
+                - {{.Name}} ({{.ImageName}}): {{.State}}: {{.Error}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      WATCHTOWER_SCHEDULE: "30 30 1 * * *"
+      WATCHTOWER_CLEANUP: "true"
+    restart: "unless-stopped"
