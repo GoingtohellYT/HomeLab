@@ -10,8 +10,9 @@ SearXNG runs in a Docker container created with the following command:
 
 ```bash
 docker run -d --name=searxng -p 8080:8080 -v /home/alex/searxng:/etc/searxng searxng/searxng:latest
+```
 
-SearXNG uses plain HTTP and takes up port 8080, but can be accessed using HTTPS through the Cloudflare tunnel
+SearXNG uses plain HTTP and takes up port 8080, but can be accessed using HTTPS through the Cloudflare tunnel.
 
 ### Configuration
 #### Preferences
