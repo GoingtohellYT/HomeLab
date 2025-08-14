@@ -1,0 +1,27 @@
+services:
+  radicale:
+    image: tomsquest/docker-radicale:3.5.4.0
+    container_name: radicale
+    ports:
+      - 5232:5232
+    init: true
+
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - SETUID
+      - SETGID
+      - CHOWN
+      - KILL
+    environment:
+      - RADICALE_CONFIG=/config/config
+    healthcheck:
+      test: curl -f http://127.0.0.1:5232 || exit 1
+      interval: 30s
+      retries: 3
+    restart: unless-stopped
+    volumes:
+      - /path/to/radicale/data:/data
+      - /path/to/radicale/config:/config:ro
