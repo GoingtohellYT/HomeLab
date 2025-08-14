@@ -1,8 +1,6 @@
 ## What's a homelab ?
 📕 The way I see it, a homelab can be anything from an old computer to a server. It's just something you use to self-host some software you use. It can be a search engine, a DNS server, a media server, a personal cloud, your online calendar, or all these things at the same time!
 
-Side note: you might appear like an alien when talking to others, especially when they say: "Did you see that show on Netflix?" and you answer: "Nah, I don't have Netflix, I just use Jellyfin."
-
 ## Why a homelab ?
 
 There are multiple reasons that led me to start this project. First of all, it is a great project to learn various technologies and tools.
@@ -10,9 +8,6 @@ There are multiple reasons that led me to start this project. First of all, it i
 Since I created this small server, I learned about containerisation with Docker and its limitations, got way better at networking through setting up and trying to understand how Pi-hole works (How does a DNS server work? What are DoT, DoH and DNSSEC?), discovered the world of meta-search engines and metrics scraping, but also how to monitor my server and the services running. While installing Jellyfin, I looked for the best compromise between quality/size/accessibility, I dipped my toes in the world of audio and video codecs, learned the difference between a codec and a container, and between transcoding and remuxing. I now also better understand the difference between x86 and ARM architectures. In summary, I learned a lot, which is a good thing both both personally and professionally.
 
 Another reason is privacy. Indeed, the first services I self-hosted and that led me down this rabbit hole were SearXNG and Pi-hole, one to replace Google Search, the second to block ads and telemetry network-wide. Sure, I could have just used Startpage, Brave Search, DuckDuckGo, and NextDNS. But the way I see it, if you have the opportunity to enhance your internet usage and learn things you care about at the same time, there's no reason not to take that opportunity!
-
-Lastly, it's kind of cool to say I self-host some of the services I use daily right? I mean, what percentage of the world population can say: "I have my own search engine" or "I have my own media server"?
-And you know what? Just give me a break… It's freakin' fun!! 
 
 ## My Homelab
 ### Hardware
