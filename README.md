@@ -60,7 +60,7 @@ Regarding remote access to the homelab, I use two different services, both based
 #### Cloudflare tunnel
 The Cloudflare tunnel allows me to expose any service publicly using a domain name, without needing to open any port on the router. To do so, it is required to have Cloudflare as the domain name's DNS nameserver. Running the cloudflared Docker container on the server with the specific token creates a connection between the homelab and the Cloudflare servers. It is possible to match any subdomain to a specific service in the Cloudflare tunnel's web interface.
 
-This method is used for any "user" service. This includes services that do not contain sensitive user information, with the exception of Radicale, as Apple needs an HTTPS connection with a valid certificate, whereas Radicale uses HTTP by default.
+This method is used for any "user" service. This includes services that do not contain sensitive user information.
 
 #### Twingate Connector
 
@@ -68,7 +68,7 @@ The Twingate Connector does not make the exposed services accessible from the we
 
 Twingate needs the homelab to run its connector. This connector keeps a connection with their servers. This way, when a client tries to connect, the Twingate server can have the client and homelab connect directly via peer-to-peer. Twingate itself is unable to see any traffic occurring between the homelab and the clients.
 
-This method is used for services containing "sensitive" information or tools that allow you to control the homelab. For example, services like Portainer and Grafana use this method. Connecting to the homelab via SSH when outside the LAN also requires a Twingate connection.
+This method is used for services containing "sensitive" information or tools that allow you to control the homelab.
 
 #### Need an upgrade ?
 
